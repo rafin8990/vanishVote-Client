@@ -9,14 +9,14 @@ export const polls: Poll[] = [
     verified: true,
     options: [
       {
-        id: 'yes',
-        label: 'Yes',
+        id: 'no',
+        label: 'no',
         votes: 61180,
         percentage: 53.2,
       },
       {
-        id: 'no',
-        label: 'No',
+        id: 'yes',
+        label: 'yes',
         votes: 39220,
         percentage: 34.1,
       },
