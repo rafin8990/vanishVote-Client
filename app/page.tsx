@@ -229,7 +229,7 @@ export default function CreatePollForm() {
                   size="sm"
                   onClick={() => setEndDate(duration.value)}
                   className={cn(
-                    "text-gray-300 border-gray-700 hover:bg-gray-800",
+                    "text-gray-300 hover:text-gray-300 border-gray-700 bg-gray-700  hover:bg-gray-800",
                     endDate &&
                       endDate.getTime() === duration.value.getTime() &&
                       "bg-gray-700"
@@ -240,44 +240,48 @@ export default function CreatePollForm() {
               ))}
             </div>
 
-            <div className="flex gap-2">
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button
-                    variant="outline"
-                    className={cn(
-                      "w-full justify-start text-left font-normal bg-gray-800 border-gray-700 text-white",
-                      !endDate && "text-muted-foreground"
-                    )}
-                  >
-                    <Calendar className="mr-2 h-4 w-4" />
-                    {endDate ? format(endDate, "PPP") : "Pick a date"}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0 bg-gray-800 border-gray-700">
-                  <CalendarComponent
-                    mode="single"
-                    selected={endDate}
-                    onSelect={setEndDate}
-                    initialFocus
-                    disabled={(date) => date < new Date()}
-                    className="bg-gray-800 text-white"
-                  />
-                </PopoverContent>
-              </Popover>
+            <div className="flex  gap-2">
+              <div className="w-full">
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className={cn(
+                        "w-full justify-start text-left font-normal bg-gray-800 border-gray-700 text-white",
+                        !endDate && "text-muted-foreground"
+                      )}
+                    >
+                      <Calendar className="mr-2 h-4 w-4" />
+                      {endDate ? format(endDate, "PPP") : "Pick a date"}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0 bg-gray-800 border-gray-700">
+                    <CalendarComponent
+                      mode="single"
+                      selected={endDate}
+                      onSelect={setEndDate}
+                      initialFocus
+                      disabled={(date) => date < new Date()}
+                      className="bg-gray-800 text-white"
+                    />
+                  </PopoverContent>
+                </Popover>
+              </div>
 
-              <Select value={endTime} onValueChange={setEndTime}>
-                <SelectTrigger className="w-[140px] bg-gray-800 border-gray-700 text-white">
-                  <SelectValue placeholder="Select time" />
-                </SelectTrigger>
-                <SelectContent className="bg-gray-800 border-gray-700 text-white">
-                  {generateTimeOptions().map((time) => (
-                    <SelectItem key={time} value={time}>
-                      {time}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <div className="w-full">
+                <Select value={endTime} onValueChange={setEndTime}>
+                  <SelectTrigger className="w-[140px] bg-gray-800 border-gray-700 text-white">
+                    <SelectValue placeholder="Select time" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-gray-800 border-gray-700 text-white">
+                    {generateTimeOptions().map((time) => (
+                      <SelectItem key={time} value={time}>
+                        {time}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
           </div>
         </div>
