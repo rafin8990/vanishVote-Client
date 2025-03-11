@@ -136,7 +136,7 @@ export default function PollCard({ poll }: PollCardProps) {
   const winningOption = findWinningOption();
 
   const [copied, setCopied] = useState(false);
-  const pollUrl = `http://localhost:3000/poll/${poll.uuid}/${pollId}`;
+  const pollUrl = `https://vanish-vote-client-kappa.vercel.app/poll/${poll.uuid}/${pollId}`;
   const handleCopyLink = () => {
     navigator.clipboard.writeText(pollUrl).then(() => {
       setCopied(true);
