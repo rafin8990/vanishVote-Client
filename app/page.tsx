@@ -201,7 +201,7 @@ export default function CreatePollForm() {
                 variant="outline"
                 size="sm"
                 onClick={addOption}
-                className="mt-2 w-full text-gray-300 border-gray-700 hover:bg-gray-800"
+                className="mt-2 w-full text-gray-300 border-gray-700 bg-gray-800"
               >
                 <Plus className="h-4 w-4 mr-2" />
                 Add Option
