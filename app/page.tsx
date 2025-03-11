@@ -79,7 +79,7 @@ export default function CreatePollForm() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/v1/poll",
+        "https://vanish-vote-murex.vercel.app/api/v1/poll",
         pollData,
         {
           withCredentials: true,

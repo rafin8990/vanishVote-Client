@@ -46,7 +46,7 @@ export default function PollCard({ poll }: PollCardProps) {
     try {
       console.log(option);
       const response = await axios.post(
-        `http://localhost:5000/api/v1/poll/${pollId}/${userId}/vote`,
+        `https://vanish-vote-murex.vercel.app/api/v1/poll/${pollId}/${userId}/vote`,
         { option }
       );
 
@@ -85,7 +85,7 @@ export default function PollCard({ poll }: PollCardProps) {
   const handleReaction = async (reaction: string) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/v1/poll/${pollId}/${userId}/reaction`,
+        `https://vanish-vote-murex.vercel.app/api/v1/poll/${pollId}/${userId}/reaction`,
         { reaction }
       );
 

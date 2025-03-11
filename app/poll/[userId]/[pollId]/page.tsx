@@ -13,7 +13,7 @@ export default function Home() {
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/v1/poll/${userId}/${pollId}`)
+    fetch(`https://vanish-vote-murex.vercel.app/api/v1/poll/${userId}/${pollId}`)
       .then((res) => res.json())
       .then((data) => {
         setPoll(data.data);

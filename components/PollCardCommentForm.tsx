@@ -28,7 +28,7 @@ const PollCardCommentForm: React.FC<PollCardCommentFormProps> = ({ pollId, onCom
     setIsLoading(true);
 
     try {
-      const response = await axios.patch(`http://localhost:5000/api/v1/poll/${pollId}/comment`, {  //Template literal for the link
+      const response = await axios.patch(`https://vanish-vote-murex.vercel.app/api/v1/poll/${pollId}/comment`, {  //Template literal for the link
         text: commentText,
       });
 
